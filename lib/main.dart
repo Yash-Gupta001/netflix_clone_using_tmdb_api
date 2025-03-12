@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone_using_tmdb_api/pages/home.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_clone_using_tmdb_api/screens/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Netflix clone',
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(
+            color: Colors.white,
+            fontSize: 24
+          ),
+          bodyMedium: TextStyle(
+            color: Colors.white,
+            fontSize: 20
+          )
+        ),
+        colorScheme: 
+        ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
+          surface: Colors.black),
+          fontFamily: GoogleFonts.ptSans().fontFamily,
+          useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Splashscreen(),
     );
   }
 }
